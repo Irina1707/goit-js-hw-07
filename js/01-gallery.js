@@ -52,7 +52,7 @@ function onGalleryContainerClick(event) {
 
     instance.show()
 
-    const currentActiveCard = document.querySelector()
+    //const currentActiveCard = document.querySelector()
     
 }
     //const img = event.target;
