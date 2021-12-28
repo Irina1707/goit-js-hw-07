@@ -44,17 +44,29 @@ function onGalleryContainerClick(event) {
         return;
     }
 
+    //const isGalleryImgEl = event.target.classList.contains("gallery__image");
+    //if (!(event.target.nodeName === "IMG")) {
+    //    return;
+    //}
+
     const instance = basicLightbox.create(`
-    <div class="modal">
       <img src="${event.target.dataset.source}" width="800" height="600">
-    </div>
 `)
 
     instance.show()
-
-    //const currentActiveCard = document.querySelector()
-    
+ 
 }
+
+//window.addEventListener("keyup", clickKey)
+//function clickKey(event) {
+//    if (event.code === "Escape") {
+//      const instance = basicLightbox.create(
+//	document.querySelector('modal')
+//)
+        
+//      instance.close();
+//  }
+//}
     //const img = event.target;
     //largeGalleryImg.src = event.target.dataset.source;
 
