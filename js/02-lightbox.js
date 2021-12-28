@@ -4,35 +4,22 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 const galleryContainer = document.querySelector(".gallery");
 
-
 const galleryMarkup = createGalleryItemsMarkup(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 
-galleryContainer.addEventListener("click", onGalleryContainerClick);
-
-//console.log(createGalleryItemsMarkup(galleryItems));
-
 function createGalleryItemsMarkup(galleryItems) {
 
-    return galleryItems.map(({ preview, original }) => {
+    return galleryItems.map(({ preview, original, description }) => {
         return `
         <a class="gallery__item" href="${original}">
-  <img class="gallery__image" src="${preview}" alt="Image description" />
+  <img class="gallery__image" src="${preview}" alt="${description}" />
   </a>
         `;
     }).join("");
 }
 
-var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+var lightbox = new SimpleLightbox('.gallery a', {
+    captionType: "attr", captionsData: "alt", captionPosition: "bottom", captionDelay: 250 });
 
-function onGalleryContainerClick(event) {
 
-    event.preventDefault();
-    
-    const isGalleryImgEl = event.target.classList.contains("gallery__image");
-    if (!isGalleryImgEl) {
-        return;
-    }
-    
-}
